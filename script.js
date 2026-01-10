@@ -3,33 +3,33 @@
 // --- Conocimiento de colores ---
 // Pedimos el dato y lo guardamos en una variable
 // .toLowerCase() convierte lo que escriba a minúsculas para evitar errores
-let colorUsuario = prompt("¿Cual es tu color preferido?").toLowerCase();
+let colorUsuario = prompt("Quin es el teu color preferit?").toLowerCase();
 
 // Comprobamos con lógica (IF / ELSE)
 // || significa "O" (si es verde O es azul O es rojo...)
-if (colorUsuario === "verde" || colorUsuario === "azul" || colorUsuario === "rojo") {
-    alert("Color primario");
+if (colorUsuario === "verd" || colorUsuario === "blau" || colorUsuario === "vermell") {
+    alert("Color primari");
 } else {
-    alert("Otro color");
+    alert("Un altre color");
 }
 // --- Cálculo de área ---
 // El código sigue bajando y ejecutándose...
 // Pide las variables. Prompt devuelve TEXTO.
 // parseFloat convierte texto a números decimales (por si ponen 5.5)
-let ancho = parseFloat(prompt("Introduce el ancho del rectángulo:"));
-let alto = parseFloat(prompt("Introduce la altura del rectángulo:"));
-
+let ancho = parseFloat(prompt("Introdueix l'ample del rectàngul:"));
+let alto = parseFloat(prompt("Introdueix l'alçada del rectàngulo:"));
+// Validamos que sean números y positivos
 if (isNaN(ancho) || isNaN(alto) || ancho <= 0 || alto <= 0) {
-    alert("Por favor, introduce valores numéricos positivos para ancho y alto.");
+    alert("Si us plau, introdueix valors numèrics positius per a ample i alçada.");
 } else {
     let area = ancho * alto;
-    alert("El área del rectángulo es: " + area);
+    alert("L'àrea del rectàngul ès: " + area);
 }
 // --- Ordenación numérica ---
 // Pedimos tres números. El prompt devuelve texto, así que usamos Number()
-let num1 = Number(prompt("Dime el número 1:"));
-let num2 = Number(prompt("Dime el número 2:"));
-let num3 = Number(prompt("Dime el número 3:"));
+let num1 = Number(prompt("Digues el numero 1:"));
+let num2 = Number(prompt("Digues el numero 2:"));
+let num3 = Number(prompt("Digues el numero 3:"));
 
 let lista = [num1, num2, num3];
 
@@ -37,18 +37,18 @@ let lista = [num1, num2, num3];
 // Si a-b es negativo, a va primero.
 lista.sort((a, b) => a - b);
 
-alert("Numeros ordenados: " + lista);
+alert("Nombres ordenats: " + lista);
 // --- Meses/Estaciones ---
-let numeroEstacion = parseInt(prompt("Introduce un número del 1 al 4:"));
-let estacions = ["Primavera", "Verano", "Otoño", "Invierno"];
+let numeroEstacion = parseInt(prompt("Introdueix un numero de l'1 al 4:"));
+let estacions = ["Primavera", "Estiu", "Tardor", "Hivern"];
 
 // Validamos que esté entre 1 y 4
 //tamos 1 porque el array empieza en la posición 0
 if (numeroEstacion >= 1 && numeroEstacion <= 4) {
     let nombreEstacion = estacions[numeroEstacion - 1];
-    alert("La estación es: " + nombreEstacion);
+    alert("L'estació ès: " + nombreEstacion);
 } else {
-    alert("Número inválido. Ha de ser entre 1 y 4.");
+    alert("Numero inválid. Ha de ser entre 1 i 4.");
 }
 // --- Fecha y saludo ---
 // Sacamos la hora actual del sistema
@@ -57,15 +57,15 @@ let mensaje = "";
 
 // Lógica de tramos horarios
 if (horaActual < 12) {
-    mensaje = "Buenos días";
+    mensaje = "Bon dia";
 } else if (horaActual >= 12 && horaActual <= 20) {
-    mensaje = "Buenas tardes";
+    mensaje = "Bones tardes";
 } else {
     // Si es mayor de las 20
-    mensaje = "Buenas noches";
+    mensaje = "Bona nit";
 }
 
 // Mostramos por consola (F12 para verlo) como pide el enunciado
 console.log(mensaje);
 // Opcional: un alert para que lo veas tú ahora fácil
-alert("Son las " + horaActual + "h. " + mensaje);
+alert("Son les " + horaActual + "h. " + mensaje);
