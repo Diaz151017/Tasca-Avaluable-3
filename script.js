@@ -31,41 +31,41 @@ let num1 = Number(prompt("Dime el número 1:"));
 let num2 = Number(prompt("Dime el número 2:"));
 let num3 = Number(prompt("Dime el número 3:"));
 
-let llista = [num1, num2, num3];
+let lista = [num1, num2, num3];
 
 // Ordenamos de menor a mayor.
 // Si a-b es negativo, a va primero.
-llista.sort((a, b) => a - b);
+lista.sort((a, b) => a - b);
 
-alert("Nombres ordenats: " + llista);
-// --- EXERCICI 1.4: Mesos/Estacions ---
-let numeroEstacio = parseInt(prompt("Exercici 4: Introduce un número del 1 al 4:"));
-let estacions = ["Primavera", "Estiu", "Tardor", "Hivern"];
+alert("Numeros ordenados: " + lista);
+// --- Meses/Estaciones ---
+let numeroEstacion = parseInt(prompt("Introduce un número del 1 al 4:"));
+let estacions = ["Primavera", "Verano", "Otoño", "Invierno"];
 
 // Validamos que esté entre 1 y 4
-if (numeroEstacio >= 1 && numeroEstacio <= 4) {
-    // Restamos 1 porque el array empieza en la posición 0
-    let nomEstacio = estacions[numeroEstacio - 1];
-    alert("L'estació és: " + nomEstacio);
+//tamos 1 porque el array empieza en la posición 0
+if (numeroEstacion >= 1 && numeroEstacion <= 4) {
+    let nombreEstacion = estacions[numeroEstacion - 1];
+    alert("La estación es: " + nombreEstacion);
 } else {
-    alert("Número invàlid. Ha de ser entre 1 i 4.");
+    alert("Número inválido. Ha de ser entre 1 y 4.");
 }
-// --- Data i salutació ---
+// --- Fecha y saludo ---
 // Sacamos la hora actual del sistema
 let horaActual = new Date().getHours(); 
-let missatge = "";
+let mensaje = "";
 
 // Lógica de tramos horarios
 if (horaActual < 12) {
-    missatge = "Bon dia";
+    mensaje = "Buenos días";
 } else if (horaActual >= 12 && horaActual <= 20) {
-    missatge = "Bona tarda";
+    mensaje = "Buenas tardes";
 } else {
     // Si es mayor de las 20
-    missatge = "Bona nit";
+    mensaje = "Buenas noches";
 }
 
 // Mostramos por consola (F12 para verlo) como pide el enunciado
-console.log(missatge);
+console.log(mensaje);
 // Opcional: un alert para que lo veas tú ahora fácil
-alert("Son las " + horaActual + "h. " + missatge);
+alert("Son las " + horaActual + "h. " + mensaje);
