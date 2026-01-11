@@ -73,5 +73,3 @@ if (horaActual < 12) {
 
 // Mostrem per consola (F12 per veure-ho) com demana l'enunciat
 console.log(mensaje);
-// Opcional: un alert perquè ho vegis tu ara fàcil
-alert("Són les " + horaActual + "h. " + mensaje);
