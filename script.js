@@ -1,71 +1,77 @@
-// --- EXERCICI 1: Conocimiento de colores y càlculo de área ---
+// --- EXERCICI 1: Coneixement de colors i càlcul d’àrea ---
 
-// --- Conocimiento de colores ---
-// Pedimos el dato y lo guardamos en una variable
-// .toLowerCase() convierte lo que escriba a minúsculas para evitar errores
-let colorUsuario = prompt("¿Cual es tu color preferido?").toLowerCase();
+// --- Coneixement de colors ---
+// Demanem la dada i la guardem en una variable
+// .toLowerCase() converteix el que s'escrigui a minúscules per evitar errors
+let colorUsuario = prompt("Quin és el teu color preferit?").toLowerCase();
 
-// Comprobamos con lógica (IF / ELSE)
-// || significa "O" (si es verde O es azul O es rojo...)
-if (colorUsuario === "verde" || colorUsuario === "azul" || colorUsuario === "rojo") {
-    alert("Color primario");
+// Comprovem amb lògica (IF / ELSE)
+// || significa "O" (si és verd O és blau O és vermell...)
+// NOTA: Hem canviat els strings a català perquè coincideixin amb el prompt
+if (colorUsuario === "verd" || colorUsuario === "blau" || colorUsuario === "vermell") {
+    alert("Color primari");
 } else {
-    alert("Otro color");
+    alert("Altre color");
 }
-// --- Cálculo de área ---
-// El código sigue bajando y ejecutándose...
-// Pide las variables. Prompt devuelve TEXTO.
-// parseFloat convierte texto a números decimales (por si ponen 5.5)
-let ancho = parseFloat(prompt("Introduce el ancho del rectángulo:"));
-let alto = parseFloat(prompt("Introduce la altura del rectángulo:"));
+
+// --- Càlcul d’àrea ---
+// El codi continua baixant i executant-se...
+// Demana les variables. Prompt retorna TEXT.
+// parseFloat converteix text a nombres decimals (per si posen 5.5)
+let ancho = parseFloat(prompt("Introdueix l'amplada del rectangle:"));
+let alto = parseFloat(prompt("Introdueix l'altura del rectangle:"));
 
 if (isNaN(ancho) || isNaN(alto) || ancho <= 0 || alto <= 0) {
-    alert("Por favor, introduce valores numéricos positivos para ancho y alto.");
+    alert("Si us plau, introdueix valors numèrics positius per a l'amplada i l'altura.");
 } else {
     let area = ancho * alto;
-    alert("El área del rectángulo es: " + area);
+    alert("L'àrea del rectangle és: " + area);
 }
-// --- Ordenación numérica ---
-// Pedimos tres números. El prompt devuelve texto, así que usamos Number()
-let num1 = Number(prompt("Dime el número 1:"));
-let num2 = Number(prompt("Dime el número 2:"));
-let num3 = Number(prompt("Dime el número 3:"));
+
+// --- Ordenació numèrica ---
+// Demanem tres nombres. El prompt retorna text, així que usem Number()
+let num1 = Number(prompt("Digues-me el número 1:"));
+let num2 = Number(prompt("Digues-me el número 2:"));
+let num3 = Number(prompt("Digues-me el número 3:"));
 
 let lista = [num1, num2, num3];
 
-// Ordenamos de menor a mayor.
-// Si a-b es negativo, a va primero.
+// Ordenem de menor a major.
+// Si a-b és negatiu, 'a' va primer.
 lista.sort((a, b) => a - b);
 
-alert("Numeros ordenados: " + lista);
-// --- Meses/Estaciones ---
-let numeroEstacion = parseInt(prompt("Introduce un número del 1 al 4:"));
-let estacions = ["Primavera", "Verano", "Otoño", "Invierno"];
+alert("Nombres ordenats: " + lista);
 
-// Validamos que esté entre 1 y 4
-//tamos 1 porque el array empieza en la posición 0
+// --- Mesos/Estacions ---
+let numeroEstacion = parseInt(prompt("Introdueix un número de l'1 al 4:"));
+// Traduïm l'array perquè coincideixi amb l'idioma de sortida
+let estacions = ["Primavera", "Estiu", "Tardor", "Hivern"];
+
+// Validem que estigui entre 1 i 4
+// Restem 1 perquè l'array comença a la posició 0
 if (numeroEstacion >= 1 && numeroEstacion <= 4) {
     let nombreEstacion = estacions[numeroEstacion - 1];
-    alert("La estación es: " + nombreEstacion);
+    alert("L'estació és: " + nombreEstacion);
 } else {
-    alert("Número inválido. Ha de ser entre 1 y 4.");
+    alert("Número invàlid. Ha de ser entre 1 i 4.");
 }
-// --- Fecha y saludo ---
-// Sacamos la hora actual del sistema
+
+// --- Data i salutació ---
+// Traiem l'hora actual del sistema
 let horaActual = new Date().getHours(); 
 let mensaje = "";
 
-// Lógica de tramos horarios
+// Lògica de trams horaris
 if (horaActual < 12) {
-    mensaje = "Buenos días";
+    mensaje = "Bon dia";
 } else if (horaActual >= 12 && horaActual <= 20) {
-    mensaje = "Buenas tardes";
+    mensaje = "Bona tarda";
 } else {
-    // Si es mayor de las 20
-    mensaje = "Buenas noches";
+    // Si és més tard de les 20
+    mensaje = "Bona nit";
 }
 
-// Mostramos por consola (F12 para verlo) como pide el enunciado
+// Mostrem per consola (F12 per veure-ho) com demana l'enunciat
 console.log(mensaje);
-// Opcional: un alert para que lo veas tú ahora fácil
-alert("Son las " + horaActual + "h. " + mensaje);
+// Opcional: un alert perquè ho vegis tu ara fàcil
+alert("Són les " + horaActual + "h. " + mensaje);
